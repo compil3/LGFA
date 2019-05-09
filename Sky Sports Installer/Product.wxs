@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define LGFA_TargetDir=$(var.LGFA.TargetDir)?>
+	<Product Id="4299f8ec-f741-4fc6-81c8-1f19f74073ac" Name="Sky Sports Installer" Language="1033" Version="1.2.0" Manufacturer="codeNuckl Inc" UpgradeCode="f76020c1-62f9-4bc7-8b7d-7dbe07ea8cca">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+
+    <UIRef Id="WixUI_InstallDir" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Sky_Sports_Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="Configuration_files" />
+			<ComponentGroupRef Id="Resources_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Sky Sports">
+				  <Directory Id="Configuration" Name="Configuration" />
+          <Directory Id="Configuration_Settings" Name="Settings" />
+				  <Directory Id="Resources" Name="Resources" />
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="Sky_Sports_Bot.exe" Guid="4b7545d5-526d-48bb-8614-c8f40443db56">
+			  <File Id="Sky_Sports_Bot.exe" Name="Sky Sports Bot.exe" Source="$(var.LGFA_TargetDir)Sky Sports Bot.exe" />
+			</Component>
+			<Component Id="Sky_Sports_Bot.exe.config" Guid="be0d31ce-d19a-4709-a242-892fec7412c6">
+			  <File Id="Sky_Sports_Bot.exe.config" Name="Sky Sports Bot.exe.config" Source="$(var.LGFA_TargetDir)Sky Sports Bot.exe.config" />
+			</Component>
+			<Component Id="Discord.Net.Commands.dll" Guid="5c5f83f6-c756-4ef1-9829-c630730b1a4c">
+			  <File Id="Discord.Net.Commands.dll" Name="Discord.Net.Commands.dll" Source="$(var.LGFA_TargetDir)Discord.Net.Commands.dll" />
+			</Component>
+			<Component Id="Discord.Net.WebSocket.dll" Guid="fc8a4a4b-78a6-492d-81a5-67adda2f0d6e">
+			  <File Id="Discord.Net.WebSocket.dll" Name="Discord.Net.WebSocket.dll" Source="$(var.LGFA_TargetDir)Discord.Net.WebSocket.dll" />
+			</Component>
+			<Component Id="Discord.Net.Core.dll" Guid="f71d3f74-fa5f-4f4e-b4df-8527201eaa88">
+			  <File Id="Discord.Net.Core.dll" Name="Discord.Net.Core.dll" Source="$(var.LGFA_TargetDir)Discord.Net.Core.dll" />
+			</Component>
+			<Component Id="Serilog.dll" Guid="b039ef20-76a0-4d28-a47d-978827e9992c">
+			  <File Id="Serilog.dll" Name="Serilog.dll" Source="$(var.LGFA_TargetDir)Serilog.dll" />
+			</Component>
+			
+			<Component Id="HtmlAgilityPack.dll" Guid="b7f9f913-bc31-49aa-8643-2e46f5b19b02">
+			  <File Id="HtmlAgilityPack.dll" Name="HtmlAgilityPack.dll" Source="$(var.LGFA_TargetDir)HtmlAgilityPack.dll" />
+			</Component>
+			<Component Id="LiteDB.dll" Guid="d8836e57-4b59-44a8-a161-19a3d81b1110">
+			  <File Id="LiteDB.dll" Name="LiteDB.dll" Source="$(var.LGFA_TargetDir)LiteDB.dll" />
+			</Component>
+			<Component Id="Discord.Net.Rest.dll" Guid="ff6d4c4b-c6c1-4ee8-a082-10fcf9332a08">
+			  <File Id="Discord.Net.Rest.dll" Name="Discord.Net.Rest.dll" Source="$(var.LGFA_TargetDir)Discord.Net.Rest.dll" />
+			</Component>
+			<Component Id="Newtonsoft.Json.dll" Guid="ac06b8d3-77b4-4b39-b1cc-59089f4582b2">
+			  <File Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.LGFA_TargetDir)Newtonsoft.Json.dll" />
+			</Component>
+			<Component Id="Serilog.Sinks.Async.dll" Guid="4f84fef6-fa85-4559-a39d-bc0643704dab">
+			  <File Id="Serilog.Sinks.Async.dll" Name="Serilog.Sinks.Async.dll" Source="$(var.LGFA_TargetDir)Serilog.Sinks.Async.dll" />
+			</Component>
+			<Component Id="Serilog.Sinks.Console.dll" Guid="5decfd53-a7dc-45d8-a381-d386d81f25ad">
+			  <File Id="Serilog.Sinks.Console.dll" Name="Serilog.Sinks.Console.dll" Source="$(var.LGFA_TargetDir)Serilog.Sinks.Console.dll" />
+			</Component>
+			<Component Id="Serilog.Sinks.File.dll" Guid="a8898f76-860d-4b8f-9ed2-96f7e361fc97">
+			  <File Id="Serilog.Sinks.File.dll" Name="Serilog.Sinks.File.dll" Source="$(var.LGFA_TargetDir)Serilog.Sinks.File.dll" />
+			</Component>
+			<Component Id="System.Collections.Immutable.dll" Guid="b7225301-408a-4dc3-b45c-bdb8b645b620">
+			  <File Id="System.Collections.Immutable.dll" Name="System.Collections.Immutable.dll" Source="$(var.LGFA_TargetDir)System.Collections.Immutable.dll" />
+			</Component>
+			<Component Id="System.Interactive.Async.dll" Guid="4571f0fe-b447-4ab7-9213-feed87b9cd91">
+			  <File Id="System.Interactive.Async.dll" Name="System.Interactive.Async.dll" Source="$(var.LGFA_TargetDir)System.Interactive.Async.dll" />
+			</Component>
+			<Component Id="System.Net.Http.dll" Guid="e4966b23-6a5b-4abb-9002-e2c7d7593191">
+			  <File Id="System.Net.Http.dll" Name="System.Net.Http.dll" Source="$(var.LGFA_TargetDir)System.Net.Http.dll" />
+			</Component>
+			<Component Id="Serilog.Sinks.PeriodicBatching.dll" Guid="d3d88bf4-967f-4998-ba41-db3e08826667">
+			  <File Id="Serilog.Sinks.PeriodicBatching.dll" Name="Serilog.Sinks.PeriodicBatching.dll" Source="$(var.LGFA_TargetDir)Serilog.Sinks.PeriodicBatching.dll" />
+			</Component>
+			<Component Id="Serilog.Sinks.Seq.dll" Guid="f1b65539-b0ce-48e6-b0be-d4dd8d431a48">
+			  <File Id="Serilog.Sinks.Seq.dll" Name="Serilog.Sinks.Seq.dll" Source="$(var.LGFA_TargetDir)Serilog.Sinks.Seq.dll" />
+			</Component>
+			<Component Id="Serilog.Formatting.Compact.dll" Guid="c9a08aba-63a9-459f-8467-0bbe95c459e4">
+			  <File Id="Serilog.Formatting.Compact.dll" Name="Serilog.Formatting.Compact.dll" Source="$(var.LGFA_TargetDir)Serilog.Formatting.Compact.dll" />
+			</Component>
+			<Component Id="FluentScheduler.dll" Guid="3fccd7f2-d19b-4605-b0c2-6e8f39c62bc5">
+			  <File Id="FluentScheduler.dll" Name="FluentScheduler.dll" Source="$(var.LGFA_TargetDir)FluentScheduler.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="Configuration_files" Directory="Configuration">
+	    <Component Id="Configuration_settings.json" Guid="6893b03c-72e2-4da1-8a67-7b0b03e4c95c">
+	      <File Id="Configuration_settings.json" Name="settings.json" Source="$(var.LGFA_TargetDir)Configuration\settings.json" />
+	    </Component>
+	    <Component Id="Configuration_websettings.json" Guid="36665750-00dd-4ade-8157-75245796dd48">
+	      <File Id="Configuration_websettings.json" Name="websettings.json" Source="$(var.LGFA_TargetDir)Configuration\websettings.json" />
+	    </Component>
+	    <Component Id="Configuration_psn.json" Guid="b50bcc33-de1f-4051-8bb6-5845105989d8">
+	      <File Id="Configuration_psn.json" Name="psn.json" Source="$(var.LGFA_TargetDir)Configuration\psn.json" />
+	    </Component>
+	    <Component Id="Configuration_xbox.json" Guid="5fc5d192-da79-43ad-83c3-412bb08b5b1b">
+	      <File Id="Configuration_xbox.json" Name="xbox.json" Source="$(var.LGFA_TargetDir)Configuration\xbox.json" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="Resources_files" Directory="Resources">
+      <Component Id="Resources_trade.png" Guid="72330b1b-c466-45cc-bac7-1cd1d250d249">
+        <File Id="Resources_trade.png" Name="trade.png" Source="$(var.LGFA_TargetDir)Resources\trade.png" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,15 @@
+{
+  "xboxSeasonId": 16,
+  "xboxPrevious": 1,
+  "xboxStandingsURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=standing&leagueid=53&seasonid=",
+  "xboxPlayerStatsURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=team_memberstats&leagueid=53&seasonid=",
+  "xboxDraftListURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=draftlist&leagueid=53&seasonid=",
+
+  "psnSeasonId": 5,
+  "psnPrevious": 1,
+  "psnStandingsURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=standing&leagueid=73&seasonid=",
+  "psnPlayerStatsURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=team_memberstats&leagueid=73&seasonid=",
+  "psnDraftListURL": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=draftlist&leagueid=73&seasonid=",
+
+  "newsUrl": "https://www.leaguegaming.com/forums/index.php?leaguegaming/league&action=league&page=team_news&leagueid="
+}
